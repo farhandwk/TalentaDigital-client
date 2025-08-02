@@ -1,20 +1,30 @@
 // frontend/src/routes/ProtectedRoute.jsx
 
 import React, { useContext } from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import AuthContext from '../contexts/AuthContext';
 
-const ProtectedRoute = () => {
+const ProtectedRoute = ({ allowedRoles }) => {
   const { user, loading } = useContext(AuthContext);
+  const location = useLocation();
 
-  // Jika masih dalam proses loading, jangan render apa-apa
   if (loading) {
-    return <div>Loading...</div>; // Atau tampilkan spinner
+    return <div>Loading...</div>;
   }
 
-  // Jika sudah tidak loading dan ada user, tampilkan halamannya
-  // <Outlet /> akan merender komponen anak dari rute ini (misal: DashboardPage)
-  return user ? <Outlet /> : <Navigate to="/login" replace />;
+  // Jika ada user, cek apakah perannya diizinkan
+  if (user) {
+    // Jika rute ini memerlukan peran tertentu dan peran user tidak cocok
+    if (allowedRoles && !allowedRoles.includes(user.role)) {
+      // Arahkan ke halaman "tidak diizinkan" atau kembali ke dasbor
+      return <Navigate to="/" state={{ from: location }} replace />;
+    }
+    // Jika peran cocok atau rute tidak memerlukan peran spesifik
+    return <Outlet />;
+  }
+
+  // Jika tidak ada user sama sekali
+  return <Navigate to="/login" state={{ from: location }} replace />;
 };
 
 export default ProtectedRoute;

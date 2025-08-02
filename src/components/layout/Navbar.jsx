@@ -15,6 +15,9 @@ const Navbar = () => {
             <Link to="/" className="text-2xl font-bold text-indigo-600">
               TalentaDigital
             </Link>
+            <Link to="/leaderboard" className="text-gray-500 font-medium hover:text-gray-900">
+              Papan Peringkat
+            </Link>
           </div>
           <div className="flex items-center space-x-4">
             {user ? (
