@@ -14,6 +14,10 @@ const LearnerDashboard = () => (
         Lihat Riwayat Hasil Tes &rarr;
       </Link>
     </div>
+    <div className="p-4 border rounded-lg">
+      <h3 className="font-semibold text-lg">Skill Lab</h3>
+      <Link to="/courses" className="text-indigo-600 hover:text-indigo-800 block mt-2">Jelajahi Katalog Kursus &rarr;</Link>
+    </div>
   </div>
 );
 
@@ -31,6 +35,12 @@ const TrainerDashboard = () => (
         </Link>
         {/* ----------------------- */}
       </div>
+      <div className="p-4 border rounded-lg">
+        <h3 className="font-semibold text-lg">Skill Lab</h3>
+        <Link to="/courses" className="text-indigo-600 hover:text-indigo-800 block mt-2">Jelajahi Katalog Kursus &rarr;</Link>
+        <Link to="/trainer/courses" className="text-indigo-600 hover:text-indigo-800 block mt-1">Manajemen Kursus Saya &rarr;</Link>
+        {/* Nanti kita tambahkan link manajemen kursus di sini */}
+    </div>
     </div>
   </div>
 )

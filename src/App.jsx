@@ -13,6 +13,11 @@ import MyResultsPage from './pages/MyResultsPage';
 import LeaderboardPage from './pages/LeaderboardPage';
 import QuestionBankPage from './pages/trainer/QuestionBankPage';
 import TestManagementPage from './pages/trainer/TestManagementPage';
+import CourseListPage from './pages/CourseListPage'; 
+import CourseDetailPage from './pages/CourseDetailPage'; 
+import CourseLearningPage from './pages/CourseLearningPage';
+import CourseManagementPage from './pages/trainer/CourseManagementPage'; 
+import ModuleManagementPage from './pages/trainer/ModuleManagementPage';
 
 function App() {
   return (
@@ -35,10 +40,17 @@ function App() {
             <Route path="quiz/result/:id" element={<QuizResultPage />} />
             <Route path="quiz/my-results" element={<MyResultsPage />} />
 
+            {/* Rute Skill Lab */}
+            <Route path="courses" element={<CourseListPage />} />
+            <Route path="courses/:id" element={<CourseDetailPage />} />
+            <Route path="learn/:id" element={<CourseLearningPage />} />
+
             {/* --- Sub-Grup Rute Khusus Trainer --- */}
             <Route path="trainer" element={<ProtectedRoute allowedRoles={['trainer']} />}>
               <Route path="questions" element={<QuestionBankPage />} />
               <Route path="tests" element={<TestManagementPage />} />
+              <Route path="courses" element={<CourseManagementPage />} />
+              <Route path="courses/:courseId/modules" element={<ModuleManagementPage />} />
               {/* Nanti rute trainer lain (misal: /trainer/tests) bisa ditambahkan di sini */}
             </Route>
           </Route>
