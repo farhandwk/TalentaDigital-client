@@ -91,3 +91,9 @@ export const completeProject = async (projectId, isPublic) => {
   const response = await axiosInstance.post(`${API_URL}/${projectId}/complete`, { isPublic });
   return response.data;
 };
+
+export const getPublicProjects = async () => {
+  // Kita gunakan axios biasa karena ini adalah endpoint publik
+  const response = await axios.get(`${API_URL}/gallery`);
+  return response.data;
+};

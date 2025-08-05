@@ -76,6 +76,16 @@ const LoginPage = () => {
             Daftar di sini
           </Link>
         </p>
+
+        {/* --- BAGIAN BARU DI SINI --- */}
+        <div className="mt-6 border-t pt-4 text-center text-sm">
+          <p className="text-gray-500">Atau jelajahi fitur publik kami:</p>
+          <div className="mt-2 space-x-4">
+            <Link to="/leaderboard" className="font-medium text-indigo-600 hover:text-indigo-500">Papan Peringkat</Link>
+            <Link to="/projects/gallery" className="font-medium text-indigo-600 hover:text-indigo-500">Galeri Proyek</Link>
+          </div>
+        </div>
+        {/* --------------------------- */}
       </div>
     </div>
   );

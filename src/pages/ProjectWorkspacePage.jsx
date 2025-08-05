@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getProjectById, updateProject, requestMentorship, addFeedback } from '../services/project.service';
+import { getProjectById, updateProject, requestMentorship, addFeedback, completeProject } from '../services/project.service';
 import AuthContext from '../contexts/AuthContext';
 import BusinessCanvas from '../components/projects/BusinessCanvas';
 import FeedbackThread from '../components/projects/FeedbackThread';

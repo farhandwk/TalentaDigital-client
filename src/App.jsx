@@ -27,6 +27,8 @@ import MyProjectsPage from './pages/MyProjectsPage';
 import ProjectWorkspacePage from './pages/ProjectWorkspacePage';
 import MentorshipQueuePage from './pages/trainer/MentorshipQueuePage';
 import MyMentoredProjectsPage from './pages/trainer/MyMentoredProjectsPage';
+import ProjectGalleryPage from './pages/ProjectGalleryPage'; // <-- Impor baru
+
 
 function App() {
   return (
@@ -38,6 +40,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/leaderboard" element={<LeaderboardPage />} />
+          <Route path="/projects/gallery" element={<ProjectGalleryPage />} />
 
           {/* --- Grup Rute Privat (Harus Login) --- */}
           <Route path="/" element={<ProtectedRoute />}>
