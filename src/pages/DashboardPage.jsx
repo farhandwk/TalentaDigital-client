@@ -23,6 +23,11 @@ const LearnerDashboard = () => (
       <Link to="/career" className="text-indigo-600 hover:text-indigo-800 block mt-2">Temukan Arah Kariermu &rarr;</Link>
     </div>
     {/* ------------------------- */}
+
+    <div className="p-4 border rounded-lg md:col-span-2">
+      <h3 className="font-semibold text-lg">Inkubator Wirausaha</h3>
+      <Link to="/projects" className="text-indigo-600 hover:text-indigo-800 block mt-2">Kembangkan Idemu &rarr;</Link>
+    </div>
   </div>
 );
 
@@ -46,6 +51,11 @@ const TrainerDashboard = () => (
       <Link to="/trainer/consultants" className="text-indigo-600 hover:text-indigo-800 block mt-2">Manajemen Konsultan Karier &rarr;</Link>
     </div>
      {/* ------------------------- */}
+     <div className="p-4 border rounded-lg md:col-span-2">
+      <h3 className="font-semibold text-lg">Inkubator Wirausaha</h3>
+      <Link to="/trainer/projects/queue" className="text-indigo-600 hover:text-indigo-800 block mt-2">Lihat Antrian Mentorship &rarr;</Link>
+      <Link to="/trainer/projects/my-mentored" className="text-indigo-600 hover:text-indigo-800 block mt-1">Proyek Bimbingan Saya &rarr;</Link>
+    </div>
   </div>
 )
 
