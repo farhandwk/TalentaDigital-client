@@ -18,6 +18,11 @@ import CourseDetailPage from './pages/CourseDetailPage';
 import CourseLearningPage from './pages/CourseLearningPage';
 import CourseManagementPage from './pages/trainer/CourseManagementPage'; 
 import ModuleManagementPage from './pages/trainer/ModuleManagementPage';
+import CareerHomePage from './pages/CareerHomePage'; 
+import CareerTestPage from './pages/CareerTestPage'; 
+import CareerResultPage from './pages/CareerResultPage';
+import ConsultantListPage from './pages/ConsultantListPage';
+import ConsultantManagementPage from './pages/trainer/ConsultantManagementPage';
 
 function App() {
   return (
@@ -45,12 +50,19 @@ function App() {
             <Route path="courses/:id" element={<CourseDetailPage />} />
             <Route path="learn/:id" element={<CourseLearningPage />} />
 
+            {/* Rute Kompas Karier */}
+            <Route path="career" element={<CareerHomePage />} />
+            <Route path="career/test" element={<CareerTestPage />} />
+            <Route path="career/result" element={<CareerResultPage />} />
+            <Route path="career/consultants" element={<ConsultantListPage />} />
+
             {/* --- Sub-Grup Rute Khusus Trainer --- */}
             <Route path="trainer" element={<ProtectedRoute allowedRoles={['trainer']} />}>
               <Route path="questions" element={<QuestionBankPage />} />
               <Route path="tests" element={<TestManagementPage />} />
               <Route path="courses" element={<CourseManagementPage />} />
               <Route path="courses/:courseId/modules" element={<ModuleManagementPage />} />
+              <Route path="consultants" element={<ConsultantManagementPage />} />
               {/* Nanti rute trainer lain (misal: /trainer/tests) bisa ditambahkan di sini */}
             </Route>
           </Route>

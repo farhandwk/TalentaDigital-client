@@ -3,45 +3,49 @@ import { Link } from 'react-router-dom';
 import AuthContext from '../contexts/AuthContext';
 
 const LearnerDashboard = () => (
-  <div className="mt-4 space-y-2">
-    <div>
-      <Link to="/quiz" className="text-indigo-600 hover:text-indigo-800 font-semibold">
-        Lihat & Kerjakan Tes &rarr;
-      </Link>
+  <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+    {/* ... Kartu Zona Asah Otak ... */}
+    <div className="p-4 border rounded-lg">
+      <h3 className="font-semibold text-lg">Zona Asah Otak</h3>
+      <Link to="/quiz" className="text-indigo-600 hover:text-indigo-800 block mt-2">Lihat & Kerjakan Tes &rarr;</Link>
+      <Link to="/quiz/my-results" className="text-indigo-600 hover:text-indigo-800 block mt-1">Lihat Riwayat Hasil Tes &rarr;</Link>
     </div>
-    <div>
-      <Link to="/quiz/my-results" className="text-indigo-600 hover:text-indigo-800 font-semibold">
-        Lihat Riwayat Hasil Tes &rarr;
-      </Link>
-    </div>
+    
+    {/* ... Kartu Skill Lab ... */}
     <div className="p-4 border rounded-lg">
       <h3 className="font-semibold text-lg">Skill Lab</h3>
       <Link to="/courses" className="text-indigo-600 hover:text-indigo-800 block mt-2">Jelajahi Katalog Kursus &rarr;</Link>
     </div>
+
+    {/* --- KARTU BARU DI SINI --- */}
+    <div className="p-4 border rounded-lg md:col-span-2">
+      <h3 className="font-semibold text-lg">Kompas Karier</h3>
+      <Link to="/career" className="text-indigo-600 hover:text-indigo-800 block mt-2">Temukan Arah Kariermu &rarr;</Link>
+    </div>
+    {/* ------------------------- */}
   </div>
 );
 
 const TrainerDashboard = () => (
-  <div className="mt-4 space-y-2">
-    <div>
-      <p className="font-semibold text-gray-700">Zona Asah Otak:</p>
-      <div className="pl-4 mt-1 space-y-1">
-        <Link to="/trainer/questions" className="block text-indigo-600 hover:text-indigo-800">
-          Manajemen Bank Soal &rarr;
-        </Link>
-        {/* --- LINK BARU DI SINI --- */}
-        <Link to="/trainer/tests" className="block text-indigo-600 hover:text-indigo-800">
-          Manajemen Paket Tes &rarr;
-        </Link>
-        {/* ----------------------- */}
-      </div>
-      <div className="p-4 border rounded-lg">
-        <h3 className="font-semibold text-lg">Skill Lab</h3>
-        <Link to="/courses" className="text-indigo-600 hover:text-indigo-800 block mt-2">Jelajahi Katalog Kursus &rarr;</Link>
-        <Link to="/trainer/courses" className="text-indigo-600 hover:text-indigo-800 block mt-1">Manajemen Kursus Saya &rarr;</Link>
-        {/* Nanti kita tambahkan link manajemen kursus di sini */}
+  <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+    {/* ... Kartu Zona Asah Otak ... */}
+    <div className="p-4 border rounded-lg">
+      <h3 className="font-semibold text-lg">Zona Asah Otak</h3>
+      <Link to="/trainer/questions" className="text-indigo-600 hover:text-indigo-800 block mt-2">Manajemen Bank Soal &rarr;</Link>
+      <Link to="/trainer/tests" className="text-indigo-600 hover:text-indigo-800 block mt-1">Manajemen Paket Tes &rarr;</Link>
     </div>
+    {/* ... Kartu Skill Lab ... */}
+    <div className="p-4 border rounded-lg">
+      <h3 className="font-semibold text-lg">Skill Lab</h3>
+      <Link to="/courses" className="text-indigo-600 hover:text-indigo-800 block mt-2">Jelajahi Katalog Kursus &rarr;</Link>
+      <Link to="/trainer/courses" className="text-indigo-600 hover:text-indigo-800 block mt-1">Manajemen Kursus Saya &rarr;</Link>
     </div>
+    {/* --- KARTU BARU DI SINI --- */}
+    <div className="p-4 border rounded-lg md:col-span-2">
+      <h3 className="font-semibold text-lg">Kompas Karier</h3>
+      <Link to="/trainer/consultants" className="text-indigo-600 hover:text-indigo-800 block mt-2">Manajemen Konsultan Karier &rarr;</Link>
+    </div>
+     {/* ------------------------- */}
   </div>
 )
 
