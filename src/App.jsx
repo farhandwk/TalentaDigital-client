@@ -1,11 +1,13 @@
 // frontend/src/App.jsx
 
+import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
 import ProtectedRoute from './routes/ProtectedRoute';
 import Navbar from './components/layout/Navbar';
+import Sidebar from './components/layout/Sidebar';
 import QuizListPage from './pages/QuizListPage';
 import QuizTakingPage from './pages/QuizTakingPage';
 import QuizResultPage from './pages/QuizResultPage';
@@ -31,10 +33,20 @@ import ProjectGalleryPage from './pages/ProjectGalleryPage'; // <-- Impor baru
 
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+
+  const handleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen)
+  }
+
   return (
     <div className="bg-gray-50 min-h-screen">
-      <Navbar />
-      <main>
+      <Navbar isOpen={isSidebarOpen} toogleSidebar={handleSidebar} />
+      <Sidebar isOpen={isSidebarOpen} toogleSidebar={handleSidebar} />
+      {isSidebarOpen && (
+        <div className={`fixed top-0 left-0 w-full h-full bg-black/10`} onClick={handleSidebar} style={{backdropFilter: "blur(5px)"}}></div>
+      )}
+      <main className='pt-16'>
         <Routes>
           {/* --- Rute Publik --- */}
           <Route path="/login" element={<LoginPage />} />

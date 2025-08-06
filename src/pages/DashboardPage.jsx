@@ -7,26 +7,26 @@ const LearnerDashboard = () => (
     {/* ... Kartu Zona Asah Otak ... */}
     <div className="p-4 border rounded-lg">
       <h3 className="font-semibold text-lg">Zona Asah Otak</h3>
-      <Link to="/quiz" className="text-indigo-600 hover:text-indigo-800 block mt-2">Lihat & Kerjakan Tes &rarr;</Link>
-      <Link to="/quiz/my-results" className="text-indigo-600 hover:text-indigo-800 block mt-1">Lihat Riwayat Hasil Tes &rarr;</Link>
+      <Link to="/quiz" className="text-[#0a5c36] hover:text-black block mt-2">Lihat & Kerjakan Tes &rarr;</Link>
+      <Link to="/quiz/my-results" className="text-[#0a5c36] hover:text-black block mt-1">Lihat Riwayat Hasil Tes &rarr;</Link>
     </div>
     
     {/* ... Kartu Skill Lab ... */}
     <div className="p-4 border rounded-lg">
       <h3 className="font-semibold text-lg">Skill Lab</h3>
-      <Link to="/courses" className="text-indigo-600 hover:text-indigo-800 block mt-2">Jelajahi Katalog Kursus &rarr;</Link>
+      <Link to="/courses" className="text-[#0a5c36] hover:text-black block mt-2">Jelajahi Katalog Kursus &rarr;</Link>
     </div>
 
     {/* --- KARTU BARU DI SINI --- */}
     <div className="p-4 border rounded-lg md:col-span-2">
       <h3 className="font-semibold text-lg">Kompas Karier</h3>
-      <Link to="/career" className="text-indigo-600 hover:text-indigo-800 block mt-2">Temukan Arah Kariermu &rarr;</Link>
+      <Link to="/career" className="text-[#0a5c36] hover:text-black block mt-2">Temukan Arah Kariermu &rarr;</Link>
     </div>
     {/* ------------------------- */}
 
     <div className="p-4 border rounded-lg md:col-span-2">
       <h3 className="font-semibold text-lg">Inkubator Wirausaha</h3>
-      <Link to="/projects" className="text-indigo-600 hover:text-indigo-800 block mt-2">Kembangkan Idemu &rarr;</Link>
+      <Link to="/projects" className="text-[#0a5c36] hover:text-black block mt-2">Kembangkan Idemu &rarr;</Link>
     </div>
   </div>
 );
@@ -36,25 +36,25 @@ const TrainerDashboard = () => (
     {/* ... Kartu Zona Asah Otak ... */}
     <div className="p-4 border rounded-lg">
       <h3 className="font-semibold text-lg">Zona Asah Otak</h3>
-      <Link to="/trainer/questions" className="text-indigo-600 hover:text-indigo-800 block mt-2">Manajemen Bank Soal &rarr;</Link>
-      <Link to="/trainer/tests" className="text-indigo-600 hover:text-indigo-800 block mt-1">Manajemen Paket Tes &rarr;</Link>
+      <Link to="/trainer/questions" className="text-[#0a5c36] hover:text-black block mt-2">Manajemen Bank Soal &rarr;</Link>
+      <Link to="/trainer/tests" className="text-[#0a5c36] hover:text-black block mt-1">Manajemen Paket Tes &rarr;</Link>
     </div>
     {/* ... Kartu Skill Lab ... */}
     <div className="p-4 border rounded-lg">
       <h3 className="font-semibold text-lg">Skill Lab</h3>
-      <Link to="/courses" className="text-indigo-600 hover:text-indigo-800 block mt-2">Jelajahi Katalog Kursus &rarr;</Link>
-      <Link to="/trainer/courses" className="text-indigo-600 hover:text-indigo-800 block mt-1">Manajemen Kursus Saya &rarr;</Link>
+      <Link to="/courses" className="text-[#0a5c36] hover:text-black block mt-2">Jelajahi Katalog Kursus &rarr;</Link>
+      <Link to="/trainer/courses" className="text-[#0a5c36] hover:text-black block mt-1">Manajemen Kursus Saya &rarr;</Link>
     </div>
     {/* --- KARTU BARU DI SINI --- */}
     <div className="p-4 border rounded-lg md:col-span-2">
       <h3 className="font-semibold text-lg">Kompas Karier</h3>
-      <Link to="/trainer/consultants" className="text-indigo-600 hover:text-indigo-800 block mt-2">Manajemen Konsultan Karier &rarr;</Link>
+      <Link to="/trainer/consultants" className="text-[#0a5c36] hover:text-black block mt-2">Manajemen Konsultan Karier &rarr;</Link>
     </div>
      {/* ------------------------- */}
      <div className="p-4 border rounded-lg md:col-span-2">
       <h3 className="font-semibold text-lg">Inkubator Wirausaha</h3>
-      <Link to="/trainer/projects/queue" className="text-indigo-600 hover:text-indigo-800 block mt-2">Lihat Antrian Mentorship &rarr;</Link>
-      <Link to="/trainer/projects/my-mentored" className="text-indigo-600 hover:text-indigo-800 block mt-1">Proyek Bimbingan Saya &rarr;</Link>
+      <Link to="/trainer/projects/queue" className="text-[#0a5c36] hover:text-black block mt-2">Lihat Antrian Mentorship &rarr;</Link>
+      <Link to="/trainer/projects/my-mentored" className="text-[#0a5c36] hover:text-black block mt-1">Proyek Bimbingan Saya &rarr;</Link>
     </div>
   </div>
 )

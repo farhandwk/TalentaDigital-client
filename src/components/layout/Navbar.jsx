@@ -1,57 +1,84 @@
 // frontend/src/components/layout/Navbar.jsx
 
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../contexts/AuthContext';
+import hamburger from "../../assets/ham.png"
 
-const Navbar = () => {
+const Navbar = ({ isOpen, toogleSidebar }) => {
   const { user, logout } = useContext(AuthContext);
+  const [isMobile, setIsMobile] = useState(null)
+
+  const handleSidebar = () => {
+    setIsOpen(!isOpen)
+  }
+
+  const navDesktop = [
+    {id: 1, title: "Zona Asah Otak", link: "/quiz"},
+    {id: 2, title: "Skill Lab", link: "/courses"},
+    {id: 3, title: "Kompas Karier", link: "/career"},
+    {id: 4, title: "Inkubator Wirausaha", link: "/projects"},
+  ]
+
+  const navDesktop2 = [
+    {id: 1, title: "Leaderboard", link: "/leaderboard"},
+    {id: 2, title: "Galery", link: "/projects/gallery"},
+  ]
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsMobile(true)
+      }
+      else {
+        setIsMobile(false)
+      }
+    }
+    handleResize()
+    window.addEventListener("resize", handleResize)
+  }, [])
 
   return (
-    <nav className="bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold text-indigo-600">
-              TalentaDigital
-            </Link>
-            <Link to="/leaderboard" className="text-gray-500 font-medium hover:text-gray-900">
-              Papan Peringkat
-            </Link>
-            <Link to="/projects/gallery" className="text-gray-500 font-medium hover:text-gray-900">Galeri Proyek</Link>
-          </div>
-          <div className="flex items-center space-x-4">
-            {user ? (
-              // Tampilan jika pengguna sudah login
-              <>
-                <span className="text-gray-700">Halo, {user.name}</span>
-                <button
-                  onClick={logout}
-                  className="px-3 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700"
-                >
-                  Logout
-                </button>
-              </>
-            ) : (
-              // Tampilan jika pengguna belum login
-              <>
-                <Link
-                  to="/login"
-                  className="px-3 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100"
-                >
-                  Login
-                </Link>
-                <Link
-                  to="/register"
-                  className="px-3 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
-                >
-                  Daftar
-                </Link>
-              </>
-            )}
-          </div>
+    <nav className='w-full h-16 bg-white flex flex-row fixed top-0 items-center justify-between px-4'>
+      {isMobile ? (
+        <>
+        <button onClick={toogleSidebar}>
+          <img src={hamburger} className='w-12'></img>
+        </button>
+        <Link to="/" className='text-[#0a5c36] font-bold text-2xl'>Talenta Digital</Link>
+        </>
+      ) : (
+        <>
+        <div className='flex flex-row gap-12'>
+          <ul className='flex flex-row gap-6 pl-12'>
+            {navDesktop2.map((item) => (
+              <li key={item.id} className='font-semibold text-[#0a5c36]'>
+                <Link to={item.link}>{item.title}</Link>
+              </li>
+            ))}
+          </ul>
+          <ul className='flex flex-row gap-6 pl-12'>
+            {navDesktop.map((item) => (
+              <li key={item.id} className='font-semibold text-[#0a5c36]'>
+                <Link to={item.link}>{item.title}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
+        <div className='flex flex-row gap-12 items-center'>
+          <Link to="/" className='text-[#0a5c36] font-bold text-2xl'>Talenta Digital</Link>
+          {user && (
+            <div className={`flex flex-row gap-4 ${isMobile ? `hidden` : ``}`}>
+              <img src={user.profilePicture || 'https://i.pravatar.cc/150'} className='w-12 rounded-full'></img>
+              <div className='flex flex-col'>
+                <span className='font-semibold text-md'>{user.name}</span>
+                <span className='text-sm'>{user.role}</span>
+              </div>
+            </div>
+          )}
+        </div>
+        </>
+      )}
     </nav>
   );
 };
