@@ -27,7 +27,7 @@ const Navbar = ({ isOpen, toogleSidebar }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 1024) {
         setIsMobile(true)
       }
       else {
@@ -39,7 +39,7 @@ const Navbar = ({ isOpen, toogleSidebar }) => {
   }, [])
 
   return (
-    <nav className='w-full h-16 bg-white flex flex-row fixed top-0 items-center justify-between px-4'>
+    <nav className='w-full h-16 bg-white flex flex-row fixed top-0 items-center justify-between px-4 lg:px-12'>
       {isMobile ? (
         <>
         <button onClick={toogleSidebar}>
@@ -58,11 +58,11 @@ const Navbar = ({ isOpen, toogleSidebar }) => {
             ))}
           </ul>
           <ul className='flex flex-row gap-6 pl-12'>
-            {navDesktop.map((item) => (
+            {user && (navDesktop.map((item) => (
               <li key={item.id} className='font-semibold text-[#0a5c36]'>
                 <Link to={item.link}>{item.title}</Link>
               </li>
-            ))}
+            )))}
           </ul>
         </div>
         <div className='flex flex-row gap-12 items-center'>
