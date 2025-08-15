@@ -87,6 +87,23 @@ const LoginPage = () => {
         </div>
         {/* --------------------------- */}
       </div>
+      <div className="mt-8 border-t pt-6">
+            <div className="bg-gray-100 p-4 rounded-lg text-sm text-gray-700">
+                <h3 className="font-bold text-center mb-3">Informasi untuk Reviewer</h3>
+                <p className="mb-2">Silakan gunakan akun demo di bawah ini untuk mencoba semua fitur:</p>
+                <div className="space-y-1 text-xs bg-gray-200 p-2 rounded">
+                    <p><strong>Learner:</strong> <span className="font-mono">learner.demo@email.com</span></p>
+                    <p><strong>Trainer:</strong> <span className="font-mono">trainer.demo@email.com</span></p>
+                    <p><strong>Password:</strong> <span className="font-mono">password123</span></p>
+                </div>
+                <p className="mt-3 text-center">
+                    Untuk panduan lengkap, silakan lihat{' '}
+                    <a href="https://drive.google.com/file/d/1pWzwV2NkpoQNHj5FMux4nKYlkviYsLn-/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-600 hover:text-indigo-500">
+                        Dokumentasi Pengguna
+                    </a>.
+                </p>
+            </div>
+        </div>
     </div>
   );
 };

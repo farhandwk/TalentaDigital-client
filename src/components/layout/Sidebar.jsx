@@ -38,12 +38,12 @@ function Sidebar({ isOpen, toogleSidebar }) {
         <div className='flex flex-col gap-4'>
             <div className='flex flex-col p-6 px-8 gap-2'>
                 {navDesktop.map((item) => (
-                    <Link key={item.index} to={item.link} className='text-[#0a5c36] font-semibold text-md' onClick={toogleSidebar}>{item.title}</Link>
+                    <Link key={item.id} to={item.link} className='text-[#0a5c36] font-semibold text-md' onClick={toogleSidebar}>{item.title}</Link>
                 ))}
             </div>
             <div className='flex flex-col px-8 gap-2'>
                 {navDesktop2.map((item) => (
-                    <Link key={item.index} to={item.link} className='text-[#0a5c36] font-semibold text-md' onClick={toogleSidebar}>{item.title}</Link>
+                    <Link key={item.id} to={item.link} className='text-[#0a5c36] font-semibold text-md' onClick={toogleSidebar}>{item.title}</Link>
                 ))}
             </div>
         </div>
